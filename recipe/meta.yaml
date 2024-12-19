@@ -1,13 +1,13 @@
 {% set name = "gurobi-logtools" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: e387a59e29e4a90b2ffac3a042573850871c0b2d426981dc49022a9c5377fd2c
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2ba0ac6d25b3056d9961f3436f3a919a7ea183292445a4956b52a74b2f82132f
 
 build:
   noarch: python
