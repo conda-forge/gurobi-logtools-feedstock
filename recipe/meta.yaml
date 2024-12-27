@@ -36,7 +36,7 @@ test:
   commands:
     - pip check
     - ls -R
-    - pytest -vvv
+    - pytest -vvv tests/
   requires:
     - python {{ python_min }}
     - pip
