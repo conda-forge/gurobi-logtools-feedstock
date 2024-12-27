@@ -49,7 +49,7 @@ test:
     - pip
     - pytest 
   source_files:
-    - \tests
+    - tests/
 
 about:
   home: https://github.com/Gurobi/gurobi-logtools
