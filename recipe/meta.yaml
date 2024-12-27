@@ -36,7 +36,10 @@ test:
   commands:
     - pip check
     - ls -R
-    - pytest -vvv tests/
+    # The tests use relative imports,
+    # thus the prefix "python -m " is necessary to add
+    # a root folder to sys.path temporarily
+    - python -m pytest -vvv tests/
   requires:
     - python {{ python_min }}
     - pip
