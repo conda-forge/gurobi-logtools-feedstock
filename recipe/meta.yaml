@@ -35,11 +35,11 @@ test:
     - gurobi_logtools
   commands:
     - pip check
-    - pytest
+    - pytest -vvv tests/
   requires:
     - python {{ python_min }}
     - pip
-    - pytest -vvv tests/
+    - pytest 
 
 about:
   home: https://github.com/Gurobi/gurobi-logtools
