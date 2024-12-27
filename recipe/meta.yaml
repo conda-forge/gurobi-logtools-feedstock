@@ -45,7 +45,7 @@ test:
     - pip
     - pytest 
   source_files:
-    - tests/
+    - .
 
 about:
   home: https://github.com/Gurobi/gurobi-logtools
