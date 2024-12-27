@@ -43,7 +43,7 @@ test:
   requires:
     - python {{ python_min }}
     - pip
-    - pytest 
+    - pytest python -m gurobi_logtools test.xlsx data/*.log python -m gurobi_logtools --timelines test.xlsx data/*.log python -m gurobi_logtools -t test.xlsx data/*.log python -m gurobi_logtools --write-to-dir nicenames summary.xlsx tests/assets/combined/*.log
   source_files:
     - .
 
