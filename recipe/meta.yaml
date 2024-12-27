@@ -1,5 +1,7 @@
 {% set name = "gurobi-logtools" %}
 {% set version = "3.2.0" %}
+{% set python_min = "3.8" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -10,13 +12,13 @@ source:
   sha256: 2ba0ac6d25b3056d9961f3436f3a919a7ea183292445a4956b52a74b2f82132f
 
 build:
-  noarch: python
+  noarch: python {{ python_min }}
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >= {{ python_min }}, <={{ python_max }}
     - setuptools
     - wheel
     - pip
@@ -33,8 +35,11 @@ test:
     - gurobi_logtools
   commands:
     - pip check
+    - pytest
   requires:
+    - python {{ python_min }}
     - pip
+    - pytest
 
 about:
   home: https://github.com/Gurobi/gurobi-logtools
