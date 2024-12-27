@@ -35,7 +35,8 @@ test:
     - gurobi_logtools
   commands:
     - pip check
-    - pytest -vvv tests/
+    - ls -R
+    - pytest -vvv
   requires:
     - python {{ python_min }}
     - pip
