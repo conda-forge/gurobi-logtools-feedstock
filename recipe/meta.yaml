@@ -35,10 +35,18 @@ test:
     - gurobi_logtools
   commands:
     - pip check
+#    - ls -R
+# The tests use relative imports,
+# thus the prefix "python -m " is necessary to add
+# a root folder to sys.path temporarily    
+#  - cd tests; python -m pytest -vvv
    
   requires:
     - python {{ python_min }}
     - pip
+#    - pytest 
+#  source_files:
+#    - tests/
 
 
 about:
