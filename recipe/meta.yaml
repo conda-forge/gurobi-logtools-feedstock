@@ -41,9 +41,6 @@ test:
   requires:
     - python {{ python_min }}
     - pytest >=8.1,<9
-  source_files:
-    - /tests
-
 
 about:
   home: https://github.com/Gurobi/gurobi-logtools
