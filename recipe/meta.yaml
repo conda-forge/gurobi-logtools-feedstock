@@ -20,6 +20,7 @@ requirements:
   host:
     - python {{ python_min }}
     - hatchling
+    - pip
   run:
     - python >={{ python_min }},<={{ python_max }}
     - ipywidgets
