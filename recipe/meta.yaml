@@ -1,7 +1,7 @@
 {% set name = "gurobi-logtools" %}
 {% set version = "4.0.0" %}
-{% set python_min = "3.8" %}
-{% set python_max = "3.12" %}
+{% set python_min = "3.9" %}
+{% set python_max = "3.13" %}
 
 package:
   name: {{ name|lower }}
@@ -19,9 +19,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
-    - wheel
-    - pip
+    - hatchling
   run:
     - python >={{ python_min }},<={{ python_max }}
     - ipywidgets
@@ -29,23 +27,21 @@ requirements:
     - pandas
     - plotly
     - xlsxwriter
+    - nbformat>=4.2.0
 
 test:
   imports:
     - gurobi_logtools
   commands:
     - pip check
-#    - ls -R
-# The tests use relative imports,
-# thus the prefix "python -m " is necessary to add
-# a root folder to sys.path temporarily    
-#  - cd tests; python -m pytest -vvv
+    - python -m pytest -vvv
+    - ls -R
   requires:
     - python {{ python_min }}
     - pip
-#    - pytest 
-#  source_files:
-#    - tests/
+    - pytest >=8.1,<9
+  source_files:
+    - tests/
 
 
 about:
