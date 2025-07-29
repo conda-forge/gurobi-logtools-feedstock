@@ -42,7 +42,7 @@ test:
     - python {{ python_min }}
     - pytest >=8.1,<9
   source_files:
-    - ./tests
+    - /tests
 
 
 about:
