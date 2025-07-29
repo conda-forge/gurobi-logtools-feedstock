@@ -34,14 +34,16 @@ test:
     - gurobi_logtools
   commands:
     - pip check
-    - python -m pytest -vvv
+    - echo "Print all paths in current dir"
     - ls -R
+    - echo "Finished printing"
+    - python -m pytest -vvv
   requires:
     - python {{ python_min }}
     - pip
     - pytest >=8.1,<9
   source_files:
-    - tests/
+    - ./tests
 
 
 about:
