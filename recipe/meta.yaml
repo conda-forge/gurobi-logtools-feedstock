@@ -27,7 +27,7 @@ requirements:
     - pandas
     - plotly
     - xlsxwriter
-    - nbformat>=4.2.0
+    - nbformat >=4.2.0
 
 test:
   imports:
