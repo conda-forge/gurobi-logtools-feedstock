@@ -41,6 +41,8 @@ test:
     - python {{ python_min }}
     - pytest >=8.1,<9
     - pip
+  source_files:
+    - /test
 
 about:
   home: https://github.com/Gurobi/gurobi-logtools
