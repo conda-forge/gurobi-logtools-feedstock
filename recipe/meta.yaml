@@ -31,8 +31,6 @@ requirements:
     - nbformat >=4.2.0
 
 test:
-  imports:
-    - gurobi_logtools
   commands:
     - echo "Print all paths in current dir"
     - ls -R
