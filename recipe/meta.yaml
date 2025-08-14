@@ -1,5 +1,5 @@
 {% set name = "gurobi-logtools" %}
-{% set version = "3.2.0" %}
+{% set version = "4.0.1" %}
 {% set python_min = "3.9" %}
 {% set python_max = "3.13" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2ba0ac6d25b3056d9961f3436f3a919a7ea183292445a4956b52a74b2f82132f
+  sha256: 06e2246f886fa7d635678b91ca3ddea54ab2b1fafc15531242d7df4dd42cd0fc
 
 build:
   noarch: python
@@ -40,7 +40,6 @@ test:
 # thus the prefix "python -m " is necessary to add
 # a root folder to sys.path temporarily    
 #  - cd tests; 
-   
   requires:
     - python {{ python_min }}
     - pip
