@@ -1,5 +1,5 @@
 context:
-  version: 4.0.0
+  version: "4.0.1"
   python_min: "3.9"
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/Gurobi/gurobi-logtools/archive/v${{ version }}.tar.gz
-  sha256: e2ca08b14f2287ab0dcda0cbbcdee3b9b5a63358e3985a6f0261f0a0c817747b
+  sha256: 5599e5d3d250f0f51be68ca1a06bfcea9e51b024a954cb612943072892b42375
 
 build:
   script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation
