@@ -1,0 +1,59 @@
+context:
+  version: 4.0.0
+  python_min: "3.9"
+
+package:
+  name: gurobi-logtools
+  version: ${{ version }}
+
+source:
+  url: https://github.com/Gurobi/gurobi-logtools/archive/v${{ version }}.tar.gz
+  sha256: e2ca08b14f2287ab0dcda0cbbcdee3b9b5a63358e3985a6f0261f0a0c817747b
+
+build:
+  script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation
+  noarch: python
+  number: 0
+
+requirements:
+  host:
+  - python ${{ python_min }}.*
+  - hatchling
+  - pip
+  run:
+  - python >=${{ python_min }}
+  - ipywidgets 
+  - nbformat >=4.2.0
+  - numpy
+  - pandas
+  - plotly
+  - xlsxwriter
+
+tests:
+- python:
+    imports:
+    - gurobi_logtools
+    
+    pip_check: true
+    python_version:
+      - ${{ python_min }}.*
+- script:
+    - pytest -n auto -vvv
+  requirements:
+      run:
+        - pytest
+        - pytest-xdist
+        - python ${{ python_min }}.*
+  files:
+      source:
+        - .
+about:
+  homepage: https://github.com/Gurobi/gurobi-logtools
+  summary: Gurobi log file tools for parsing and exploring data
+  description: "**gurobi-logtools**, you can extract information from Gurobi log files and generate [pandas DataFrames](https://pandas.pydata.org/) or Excel worksheets for further processing.  We also include a plot method which combines the power of interactive dashboards through [`ipywidgets`](https://ipywidgets.readthedocs.io/en/stable/) and plotting functions from [`plotly.express`](https://plotly.com/python/plotly-express/), making it easy to explore your data and results!"
+  license: "Apache-2.0"
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - julian-belina
