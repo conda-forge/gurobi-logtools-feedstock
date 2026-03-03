@@ -1,13 +1,13 @@
 context:
   version: 4.0.1
   python_min: "3.9"
-  
+
 package:
   name: gurobi-logtools
   version: ${{ version }}
 
 source:
-  url: https://github.com/Gurobi/gurobi-logtools/archive/v{{ version }}.tar.gz
+  url: https://github.com/Gurobi/gurobi-logtools/archive/v${{ version }}.tar.gz
   sha256: e2ca08b14f2287ab0dcda0cbbcdee3b9b5a63358e3985a6f0261f0a0c817747b
 
 build:
